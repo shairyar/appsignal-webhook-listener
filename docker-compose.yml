@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "4567:4567"
+    volumes:
+      - .:/app
+      - bundle_cache:/usr/local/bundle
+    environment:
+      - RACK_ENV=development
+      - LOG_LEVEL=DEBUG
+
+volumes:
+  bundle_cache: 
